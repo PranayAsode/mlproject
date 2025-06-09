@@ -7,6 +7,7 @@ from sklearn.model_selection import train_test_split
 from dataclasses import dataclass
 
 
+# Creating inputs required for data transformation
 # Class to create path for Train and Test data
 
 @dataclass
@@ -20,6 +21,11 @@ class DataIngestion:
         self.ingestion_config = DataIngestionConfig()
 
     def initiate_data_ingestion(self):
+
+        """
+        This function in responsible for data ingestion
+        """
+
         logging.info("Entered the data ingestion method or component")
         try:
             df = pd.read_csv("notebook/data/stud.csv")
