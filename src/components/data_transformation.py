@@ -88,6 +88,7 @@ class DataTransformation:
     def initiate_data_tranformation(self,train_path,test_path):
         """
         This function is responsible for data transformation
+        and give train and test array and preprocessor file path
         """
 
         logging.info("Data Tranformation Intiated")

@@ -24,6 +24,7 @@ class DataIngestion:
 
         """
         This function in responsible for data ingestion
+        and gives train and test data path
         """
 
         logging.info("Entered the data ingestion method or component")
