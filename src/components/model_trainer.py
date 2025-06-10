@@ -16,8 +16,6 @@ from src.exception import CustomException
 from src.logger import logging
 from src.utils import save_object, evaluate_models
 
-from src.components.data_ingestion import DataIngestion
-from src.components.data_transformation import DataTransformation
 
 @dataclass
 class ModelTrainerCofig:
@@ -43,6 +41,8 @@ class ModelTrainer:
                 test_array[:,-1]
             )
             logging.info("Creating train and test data completed")
+    
+            
             models = {
                 "Random Forest": RandomForestRegressor(),
                 "Decision Tree": DecisionTreeRegressor(),
@@ -51,7 +51,7 @@ class ModelTrainer:
                 "Linear Regression": LinearRegression(),
                 "AdaBoost Regressor": AdaBoostRegressor(),
             }
-            
+
             logging.info("Model Evaluation initiated")
             model_report:dict = evaluate_models(X_train=X_train,y_train=y_train,X_test=X_test,y_test=y_test,models=models)
 
@@ -84,6 +84,7 @@ class ModelTrainer:
         except Exception as e:
             logging.info(CustomException(e,sys))
             raise CustomException(e,sys)
+
 
 
 
