@@ -1,7 +1,12 @@
-# output
+# system files
 artifacts/
 logs/
-.*
+**/.git
+**/.svm
+**/.hg 
+**/.DS_Store
+**/Thumbs.db
+
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
